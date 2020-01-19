@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { StyleSheet, View, Text, Platform } from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text, Platform } from 'react-native';
 
 import AppIntroSlider from 'react-native-app-intro-slider';
 
@@ -26,6 +26,7 @@ export default class SlideNoAnimate extends Component {
     render() {
         console.disableYellowBox = true
         return (
+            <SafeAreaView  style={{backgroundColor:'#ff9999', margin:10, width:'95%',height:'95%', paddingTop:20}}>
             <View style={styles.mainapp}>
                 <AppIntroSlider 
                     slides={slides}
@@ -34,6 +35,7 @@ export default class SlideNoAnimate extends Component {
                     // onSkip={this.onSkip}
                 />
             </View>
+            </SafeAreaView>
         );
     }
 }
@@ -42,15 +44,19 @@ const styles = StyleSheet.create({
     mainapp: {
         flex: 1,
         width:'100%',
-        height:'100%',
+        height:'95%',
         alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor:'red'
-        // padding: 20
+        justifyContent: 'center'
     },
+    
     image: {
-        width: '95%',
-        height: '80%',
+        width: '80%',
+        height: 300,
+        borderRadius:150,
+        alignSelf:'center',
+        margin:5
+
+        
     }
 });
 

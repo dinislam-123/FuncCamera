@@ -56,6 +56,7 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
     safeArea:{
         // marginTop:30,
+        margin:10,
         backgroundColor:'#00ffbf',
         height:'90%'
       },

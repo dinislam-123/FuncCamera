@@ -19,7 +19,7 @@ export default class DataTable extends Component {
     render() {
         const state = this.state;
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{backgroundColor:'#ff9999', margin:10, width:'95%',height:'95%', paddingTop:20}}>
                 <ScrollView horizontal={true}>
                 <View style={styles.container}>
                     
@@ -36,7 +36,7 @@ export default class DataTable extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
+    container: { flex: 1, padding: 16, paddingTop: 30 },
     head: { height: 40, backgroundColor: '#f1f8ff' },
     text: { margin: 6, width:30 }
 });

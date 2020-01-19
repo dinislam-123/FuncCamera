@@ -105,19 +105,23 @@ export default class Wallpaper extends Component {
 
 const styles = StyleSheet.create({
   safeArea:{
-    marginLeft:5,
-    marginRight:5,
-    width:'97%',
-    height:'100%'
+    margin:10,
+    width:'95%',
+    height:'95%',
+    alignSelf:'center'
   },
   imageContainer:{
     width: 183,
     height: 200,
+    // padding:5
+    // margin:5
+    paddingRight:5
   },
 
   photo: {
     height: 200,
-    alignItems: 'center'
-
+    alignItems: 'center',
+    paddingRight:5,
+    margin:5
   }
 })

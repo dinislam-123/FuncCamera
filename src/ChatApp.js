@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { TouchableHighlight, SafeAreaView, ScrollView ,StyleSheet, View, Text, TextInput, Button } from 'react-native';
 import io from "socket.io-client";
 
+import firebase1 from './Connection/Connection.js'
+
+
 export default class ChatApp extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +32,8 @@ export default class ChatApp extends Component {
   }
 
   render() {
+
+    console.log('Connected...')
     const chatMessages = this.state.chatMessages.map(textData => {
       return (<View style={styles.textData}>
         <Text style={{ flexShrink: 1, color:'white', fontSize:20}}>{textData}</Text></View>

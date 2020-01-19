@@ -2,25 +2,9 @@ import React, { Component } from 'react'
 import { StyleSheet, SafeAreaView, View, Text } from 'react-native'
 import { Table, Row, Rows } from 'react-native-table-component'
 
-import * as firebase from "firebase";
+// import * as firebase from "firebase";
 import { ScrollView } from 'react-native-gesture-handler';
-
-// import { YellowBox } from 'react-native';
-
-// YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
-
-let config = {
-    apiKey: "AIzaSyAQk0a1tg1D1_BUHikaepJGCtkYisjb4jo",
-    authDomain: "reactbuysell.firebaseapp.com",
-    databaseURL: "https://reactbuysell.firebaseio.com",
-    projectId: "reactbuysell",
-    storageBucket: "reactbuysell.appspot.com",
-    messagingSenderId: "597664386430",
-    appId: "1:597664386430:web:848f4ec10cd956f0f4372f"
-};
-
-const app = firebase.initializeApp(config);
-firebasedb = app.database();
+import firebase1 from './Connection/Connection.js'
 
 export default class RealData extends Component {
     constructor(props) {
@@ -34,7 +18,7 @@ export default class RealData extends Component {
     }
 
     componentDidMount() {
-        firebasedb.ref('ProductSell/').once('value')
+        firebase1.ref('ProductSell/').once('value')
             .then((snapshot) => {
                 const data = snapshot.val();
                 var listData = [];
@@ -51,28 +35,8 @@ export default class RealData extends Component {
                     var array1 = []
                     array1.push(productName, desc, price, remQty, sellerName, boughtFrom, totalQty)
                     listData.push(array1)
-
-                    // const dataObject = {
-                    //     'ProductName': productName,
-                    //     'Qty': quantity
-                    // }
-                    // listData.push(dataObject)
-
                 })
-
-                console.log('Lenth of object=======>', listData.length)
-                console.log('List Data----------->', listData)
                 this.setState({ dataList: listData });
-                console.log('Data List----------->', this.state.dataList)
-
-                // var array1=[];
-                // for (var x in listData) {
-                // console.log('inside loop=====>',listData[x].ProductName);
-                //   }
-                // for(var i=0; i<listData.length; i++)
-                // {
-                //     console.log('inside loop',listData[i].ProductName)
-                // }
             })
             .catch((error) => {
                 console.log('Connection Problem....')
@@ -81,7 +45,7 @@ export default class RealData extends Component {
 
     componentWillMount = () => {
         setInterval(() => {
-            firebasedb.ref('ProductSell/').once('value')
+            firebase1.ref('ProductSell/').once('value')
                 .then((snapshot) => {
                     const data = snapshot.val();
                     var listData = [];
@@ -114,7 +78,7 @@ export default class RealData extends Component {
 
 
         return (
-            <SafeAreaView style={{ backgroundColor: 'green', width: '95%', height: '95%', alignSelf: 'center' }}>
+            <SafeAreaView style={{backgroundColor:'#ff9999', margin:10, width:'95%',height:'95%', paddingTop:20}}>
                 <View >
                     <Text style={{ alignSelf: 'center', color: 'white' }}>Display Real Time Data</Text>
                     <ScrollView>

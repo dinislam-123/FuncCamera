@@ -40,10 +40,10 @@ export default class DisplayText extends Component {
 
     render(){
         return(
-            <SafeAreaView style={{backgroundColor:'#ff9999', width:'100%',height:'100%', paddingTop:20}}>
+            <SafeAreaView style={{backgroundColor:'#ff9999', margin:10, width:'95%',height:'95%', paddingTop:20}}>
                
                 <View style={{alignSelf:'center', paddingTop:20}}>
-                    <Text style={styles.textItem} onPress={()=>{this._textClick1()}}>React Native View</Text>
+                    <Text style={styles.textItem} onPress={()=>{this._textClick1()}}>Chapter-1</Text>
                     {/* <Image source={require('./downwards-pointer.png')} style={{width:20, height:15}}></Image> */}
                     <View style={styles.item}>
                         {this.state.isHidden1 ?
@@ -54,7 +54,7 @@ export default class DisplayText extends Component {
                         }
                     </View>
 
-                     <Text style={styles.textItem} onPress={()=>{this._textClick2()}}>React Native Text</Text>
+                     <Text style={styles.textItem} onPress={()=>{this._textClick2()}}>Chapter-2</Text>
                      <View style={styles.item}>{this.state.isHidden2 ?
                          <Text style={styles.text}>This component can be nested and it can inherit properties from parent to child. 
                          This can be useful in many ways. We will show you example of capitalizing the first letter, styling words or parts of the text, etc.
@@ -62,7 +62,7 @@ export default class DisplayText extends Component {
                          }
                      </View>
 
-                     <Text style={styles.textItem} onPress={()=>{this._textClick3()}}>React Native ListView</Text>
+                     <Text style={styles.textItem} onPress={()=>{this._textClick3()}}>Chapter-3</Text>
                      <View style={styles.item}>{this.state.isHidden3 ?
                          <Text style={styles.text}>The React Native ListView is a view component which contains the list 
                          of items and displays in a vertical scrollable list. The minimum API to create list view is ListView.
@@ -71,7 +71,7 @@ export default class DisplayText extends Component {
                          }
                      </View>
 
-                     <Text style={styles.textItem} onPress={()=>{this._textClick4()}}>React Native FlatList</Text>
+                     <Text style={styles.textItem} onPress={()=>{this._textClick4()}}>Chapter-4</Text>
                      <View style={styles.item}>{this.state.isHidden4 ?
                          <Text style={styles.text}>There are two primary props you need to know about in a FlatList and that’s data and renderItem.
                           The first is an array of data used to create the list, typically an array of objects, and the second is the function that
@@ -92,13 +92,13 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:'#ffe6e6',
         // alignSelf:'center',
-        backgroundColor:'#000000'
+        backgroundColor:'white'
     },
 
     textItem:{
         fontSize:20,
         fontWeight:'bold',
-        color:'white',
+        color:'green',
         paddingLeft:10
         
     },
