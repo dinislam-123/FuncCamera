@@ -36,6 +36,8 @@ target 'funcCamera' do
 
   pod 'RNCMaskedView', :path => '../node_modules/@react-native-community/masked-view'
 
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
   target 'funcCameraTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, Image, SafeAreaView, ScrollView, StyleSheet, Text, View, Alert,Button } from 'react-native';
+import { Header } from 'react-native-elements';
+import { Left, Right, Icon } from 'native-base';
 
 export default class Home extends Component {
+        constructor(props){
+            super(props)
+        }
 
     render() {
 
@@ -10,6 +15,12 @@ export default class Home extends Component {
 
         return (
             <SafeAreaView style={styles.safeArea}>
+                <View>
+                    <Header
+                    // leftComponent={<Icon name="menu" onPress={() => this._openDrawer()} />}
+                        leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
+                    />
+                </View>
                 <ScrollView>
                     <View style={styles.HomeStyle}>
                     {/* onPress={() => navigate('ProductList')} */}

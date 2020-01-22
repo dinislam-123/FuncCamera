@@ -4,11 +4,13 @@
 // react-native link react-native-safe-area-context
 // react-native link
 
-import React from 'react';
 
+import React from 'react';
 import {createAppContainer} from 'react-navigation';
+// import {StackNavigator} from 'react-navigation';
+
 import {createStackNavigator} from 'react-navigation-stack';
-// import { NativeViewGestureHandler } from 'react-native-gesture-handler';
+import { createDrawerNavigator } from "react-navigation-drawer";
 
 
 import Home from './Home';
@@ -21,7 +23,7 @@ import SlideImage from './SlideImage';
 import SlideNoAnimate from './SlideNoAnimate';
 
 const AppNavigator = createStackNavigator({
-  Home:        { screen: Home },
+  Home:        { screen: Home},
   DisplayText: { screen: DisplayText },
   ChatApp:     { screen: ChatApp },
   DataTable:   { screen: DataTable},
@@ -31,6 +33,18 @@ const AppNavigator = createStackNavigator({
   SlideNoAnimate: {screen: SlideNoAnimate}
 });
 
-const Router = createAppContainer(AppNavigator);
+const AppNavigator1 = createDrawerNavigator({
+  Home:        { screen: Home} ,
+  DisplayText: { screen: DisplayText },
+  ChatApp:     { screen: ChatApp },
+  DataTable:   { screen: DataTable},
+  RealData:    { screen: RealData},
+  Wallpaper:   {screen: Wallpaper},
+  SlideImage:  {screen: SlideImage},
+  SlideNoAnimate: {screen: SlideNoAnimate}
+});
+
+
+const Router = createAppContainer(AppNavigator1, AppNavigator);
 
 export default Router;

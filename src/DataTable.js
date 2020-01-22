@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, SafeAreaView, ScrollView } from 'react-native';
 import { Table, Row, Rows } from 'react-native-table-component';
+import { Header } from 'react-native-elements';
+import { Left, Right, Icon } from 'native-base';
 
 export default class DataTable extends Component {
     constructor(props) {
@@ -20,6 +22,12 @@ export default class DataTable extends Component {
         const state = this.state;
         return (
             <SafeAreaView style={{backgroundColor:'#ff9999', margin:10, width:'95%',height:'95%', paddingTop:20}}>
+                <View>
+                    <Header
+                    // leftComponent={<Icon name="menu" onPress={() => this._openDrawer()} />}
+                        leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
+                    />
+                </View>
                 <ScrollView horizontal={true}>
                 <View style={styles.container}>
                     

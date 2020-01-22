@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
-import {SafeAreaView,StyleSheet,View,Text, Image} from 'react-native';
+import {SafeAreaView,StyleSheet,View,Text, Image} from 'react-native'
+
+import { Header } from 'react-native-elements';
+import { Left, Right, Icon } from 'native-base';
+
 
 export default class DisplayText extends Component {
 
@@ -41,7 +45,12 @@ export default class DisplayText extends Component {
     render(){
         return(
             <SafeAreaView style={{backgroundColor:'#ff9999', margin:10, width:'95%',height:'95%', paddingTop:20}}>
-               
+                <View>
+                    <Header
+                    // leftComponent={<Icon name="menu" onPress={() => this._openDrawer()} />}
+                        leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
+                    />
+                </View>
                 <View style={{alignSelf:'center', paddingTop:20}}>
                     <Text style={styles.textItem} onPress={()=>{this._textClick1()}}>Chapter-1</Text>
                     {/* <Image source={require('./downwards-pointer.png')} style={{width:20, height:15}}></Image> */}

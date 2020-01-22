@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-
 import {SafeAreaView, StyleSheet, View, Text, Platform } from 'react-native';
-
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { Header } from 'react-native-elements';
+import { Left, Right, Icon } from 'native-base';
+
 
 export default class SlideNoAnimate extends Component {
 
@@ -19,14 +20,16 @@ export default class SlideNoAnimate extends Component {
         this.setState({ show_App: true });
     };
 
-    // onSkip = () => {
-    //     this.setState({ show_App: true });
-    // };
-
     render() {
         console.disableYellowBox = true
         return (
             <SafeAreaView  style={{backgroundColor:'#ff9999', margin:10, width:'95%',height:'95%', paddingTop:20}}>
+           <View>
+                    <Header
+                    // leftComponent={<Icon name="menu" onPress={() => this._openDrawer()} />}
+                        leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
+                    />
+                </View>
             <View style={styles.mainapp}>
                 <AppIntroSlider 
                     slides={slides}

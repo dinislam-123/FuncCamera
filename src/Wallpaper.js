@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, FlatList, View, Image } from 'react-native';
+import { Header } from 'react-native-elements';
+import { Left, Right, Icon } from 'native-base';
+
 // import { FlatList } from 'react-native-gesture-handler';
 
 var imageList_11 = [{'id':'1','image': require('./assets/Image/wall-1.jpeg') },
@@ -35,6 +38,12 @@ export default class Wallpaper extends Component {
 
     return (
       <SafeAreaView style={styles.safeArea}>
+        <View>
+                    <Header
+                    // leftComponent={<Icon name="menu" onPress={() => this._openDrawer()} />}
+                        leftComponent={<Icon name="menu" onPress={() => this.props.navigation.openDrawer()} />}
+                    />
+                </View>
         <ScrollView>
         <View >
           <FlatList
@@ -82,21 +91,6 @@ export default class Wallpaper extends Component {
           />
         </View>  
         </ScrollView>
-
-        
-        {/* Other way code// */}
-
-        {/* <View style={styles.Photo2}>{imageList_11.map((item) => {
-            return (
-
-              <View style={styles.Photo}>
-                <Image style={styles.Photo} source={item.image} />
-              </View>)
-              { height: 200, backgroundColor: 'lightgreen' }
-
-          })}
-          </View> */}
-
       </SafeAreaView>
 
     );
